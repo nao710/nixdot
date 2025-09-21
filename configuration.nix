@@ -52,6 +52,7 @@
     thunderbird
     kitty
     hyprland
+    libsForQt5.dolphin
     git
     gh
   ];
