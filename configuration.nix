@@ -53,6 +53,7 @@
     kitty
     hyprland
     git
+    gh
   ];
 
 programs.hyprland.enable = true;
