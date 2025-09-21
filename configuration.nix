@@ -52,12 +52,12 @@
     thunderbird
     kitty
  #   hyprland
+ niri
     libsForQt5.dolphin
     git
     gh
   ];
 
-programs.niri.enable = true;
 programs.git.enable= true;
 services.displayManager.ly.enable = true;
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
