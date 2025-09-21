@@ -51,14 +51,15 @@
     firefox
     thunderbird
     kitty
-    hyprland
+ #   hyprland
     libsForQt5.dolphin
     git
     gh
   ];
 
-programs.hyprland.enable = true;
+programs.niri.enable = true;
 programs.git.enable= true;
+services.displayManager.ly.enable = true;
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = "25.05"; 
