@@ -1,37 +1,33 @@
-{inputs, pkgs, ...}:{
-  programs.nixvim = {
-    enable = true;
-    colorschemes.catppuccin.enable = true;
-    { pkgs, ... }:
+{ pkgs, ... }:
 
 {
-    plugins = {
-      lsp = {
-        enable = true;
-        servers.nil_ls.enable = true;
-      };
-
-      lsp-format = {
-        enable = true;
-      };
+ programs.nixvim= {
+ enable = true;
+  plugins = {
+  lightline.enable = true;
+    lsp = {
+      enable = true;
+      servers.nil_ls.enable = true;
     };
-    extraConfigLua = ''
-      require("lspconfig").nil_ls.setup {
-        settings = {
-          ["nil"] = {
-            formatting = {
-              command = { "nixfmt" },
-            },
+
+    lsp-format = {
+      enable = true;
+    };
+  };
+  extraConfigLua = ''
+    require("lspconfig").nil_ls.setup {
+      settings = {
+        ["nil"] = {
+          formatting = {
+            command = { "nixfmt" },
           },
         },
-      }
-    '';
-    
-    extraPackages = with pkgs; [
-      nixfmt-rfc-style
-    ];
-}
+      },
+    }
+  '';
 
-
-  };
+  extraPackages = with pkgs; [
+    nixfmt-rfc-style
+  ];
+};
 }
