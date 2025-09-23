@@ -1,24 +1,19 @@
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, ... }:{
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
+      ./font.nix
     ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos"; 
 
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -33,8 +28,12 @@
     LC_TIME = "ja_JP.UTF-8";
   };
 
+  i18n.inputMethod = {
+  enable = true;
+  type = "fcitx5";
+  fcitx5.addons = [ pkgs.fcitx5-mozc ];
+};
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nao = {
     isNormalUser = true;
     description = "nao";
@@ -42,27 +41,22 @@
     packages = with pkgs; [];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    neovim
+    vim
     wget
-    firefox
     thunderbird
-    kitty
- #   hyprland
- niri
-    libsForQt5.dolphin
-    git
+    alacritty
     gh
   ];
 
-programs.git.enable= true;
-services.displayManager.ly.enable = true;
-programs.niri.enable = true;
-nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  programs.git.enable = true;
+  programs.firefox.enable = true;
+  programs.niri.enable = true;
+  services.displayManager.ly.enable = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes"];
 
-  system.stateVersion = "25.05"; 
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }
