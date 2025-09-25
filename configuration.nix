@@ -1,14 +1,15 @@
-{ config, pkgs, ... }:{
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./font.nix
-    ];
+{ config, pkgs, ... }:
+{
+  imports = [
+    ./hardware-configuration.nix
+    ./font.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
-  networking.hostName = "nixos"; 
+  networking.hostName = "nixos";
 
   networking.networkmanager.enable = true;
 
@@ -29,16 +30,19 @@
   };
 
   i18n.inputMethod = {
-  enable = true;
-  type = "fcitx5";
-  fcitx5.addons = [ pkgs.fcitx5-mozc ];
-};
+    enable = true;
+    type = "fcitx5";
+    fcitx5.addons = [ pkgs.fcitx5-mozc ];
+  };
 
   users.users.nao = {
     isNormalUser = true;
     description = "nao";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -49,12 +53,16 @@
     thunderbird
     alacritty
     gh
+    wl-clipboard
   ];
 
   programs.firefox.enable = true;
   programs.niri.enable = true;
   services.displayManager.ly.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   system.stateVersion = "25.05";
 
