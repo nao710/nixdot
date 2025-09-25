@@ -54,6 +54,7 @@
     alacritty
     gh
     wl-clipboard
+    nerd-fonts.hack
   ];
 
   programs.firefox.enable = true;
