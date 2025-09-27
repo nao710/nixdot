@@ -1,5 +1,4 @@
 {
-  services.bluetooth.enable = true;
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
   hardware.pulseaudio.enable = false;
