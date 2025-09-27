@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ./font.nix
+    ./audio.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
