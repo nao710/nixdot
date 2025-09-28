@@ -4,7 +4,7 @@
     shellAliases = {
       ".." = "cd ..";
       "..." = "cd ../..";
-      ls = "lsd -la";
+      ll = "lsd -la";
       g = "git";
       cp = "cp -i";
       rm = "rm -i";
