@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   programs.fish = {
-    enable = true;
     shellAliases = {
       ".." = "cd ..";
       "..." = "cd ../..";
@@ -15,6 +14,13 @@
       ga = "git add";
       gcl = "gh repo clone";
       gc = "git commit";
+    };
+
+      functions.ls = {
+      body = ''
+        command lsd -la 
+        end 
+        '';
     };
     functions.cd = {
       body = ''
@@ -54,15 +60,5 @@
         return $status
       '';
     };
-  };
-
-  programs.bash = {
-    initExtra = ''
-      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-      then
-        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-      fi
-    '';
   };
 }

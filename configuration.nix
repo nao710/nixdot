@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ./font.nix
     ./audio.nix
+    ./fish
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -56,11 +57,14 @@
     gh
     wl-clipboard
     nerd-fonts.hack
+    lsd
   ];
 
   programs.firefox.enable = true;
   programs.niri.enable = true;
   services.displayManager.ly.enable = true;
+  users.defaultUserShell = pkgs.fish;
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
