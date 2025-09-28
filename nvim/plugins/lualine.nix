@@ -4,7 +4,7 @@ _: {
     settings = {
       options = {
         globalstatus = true;
-        theme = "auto";
+        theme = "catppuccin";
       };
       sections = {
         lualine_a = [
