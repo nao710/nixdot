@@ -1,0 +1,12 @@
+{pkgs,...}:{
+
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      window.dimensions = {
+    columns = 200;
+    lines = 40;
+  };
+  };
+  };
+}

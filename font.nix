@@ -7,6 +7,7 @@
         noto-fonts
         noto-fonts-cjk-sans
         noto-fonts-emoji
+         nerd-fonts.hack
       ]
     );
     fontDir.enable = true;

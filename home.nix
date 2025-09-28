@@ -3,6 +3,7 @@
   imports = [
     ./nixvim.nix
     ./git.nix
+    ./alacritty.nix
     ./nvim
     ./fish
   ];
