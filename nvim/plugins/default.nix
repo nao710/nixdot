@@ -7,6 +7,7 @@
       ./treesitter.nix
       ./luasnip.nix
 			./lualine.nix
+      ./theme.nix
     ];
     plugins = {
       autoclose.enable = true;
