@@ -4,7 +4,6 @@
     ./hardware-configuration.nix
     ./font.nix
     ./audio.nix
-    ./fish
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -63,6 +62,7 @@
   programs.firefox.enable = true;
   programs.niri.enable = true;
   services.displayManager.ly.enable = true;
+  programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
   nix.settings.experimental-features = [

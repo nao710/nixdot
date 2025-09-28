@@ -4,6 +4,7 @@
     ./nixvim.nix
     ./git.nix
     ./nvim
+    ./fish
   ];
   home.username = "nao";
   home.homeDirectory = "/home/nao";
