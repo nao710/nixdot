@@ -1,9 +1,10 @@
 { inputs, ... }:
 {
-imports = [
- ./keymap.nix
- ./plugins
-];
+  imports = [
+    ./keymap.nix
+    ./plugins
+    ./options.nix
+  ];
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
