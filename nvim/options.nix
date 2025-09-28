@@ -2,7 +2,7 @@
   programs.nixvim = {
     opts = {
       number = true;
-      relativenumber = true;
+      relativenumber = false;
       tabstop = 2;
       softtabstop = 2;
       showtabline = 2;

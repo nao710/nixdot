@@ -4,6 +4,7 @@
     shellAliases = {
       ".." = "cd ..";
       "..." = "cd ../..";
+      ls = "lsd -la";
       g = "git";
       cp = "cp -i";
       rm = "rm -i";
@@ -16,12 +17,6 @@
       gc = "git commit";
     };
 
-      functions.ls = {
-      body = ''
-        command lsd -la 
-        end 
-        '';
-    };
     functions.cd = {
       body = ''
         if test (count $argv) -eq 0
