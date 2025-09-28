@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       font = {
-        size = 14;
+        size = 12;
         bold = {
           family = "hack Nerd Font";
           style = "Bold";
@@ -29,7 +29,7 @@
         };
       };
       window = {
-        opacity = 0.763;
+        # opacity = 0.763;
         dimensions = {
           columns = 200;
           lines = 40;
