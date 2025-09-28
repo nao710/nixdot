@@ -152,7 +152,6 @@
         action = "<C-w>-";
       }
 
-
       # Tab edit
       {
         mode = "n";
@@ -202,17 +201,12 @@
         key = "er";
         action = "<cmd>Lspsaga diagnostic_jump_next<CR>";
       }
-    ];
+      {
+        mode = "n";
+        key = "ff";
+        action = "<cmd>Oil --float<CR>";
+      }
 
-    # plugins = {
-    #   # NnnPicker (nnn.nvimなど)
-    #   nnn-nvim.enable = true;
-    #
-    #   # Floaterm (floaterm.nvimなど)
-    #   floaterm.enable = true;
-    #
-    #   # LSPaga (lspsaga.nvim)
-    #   lspsaga.enable = true;
-    # };
+    ];
   };
 }
