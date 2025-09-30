@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./nixvim.nix
     ./git.nix
     ./alacritty.nix
     ./nvim
     ./fish
+    ./niri
   ];
   home.username = "nao";
   home.homeDirectory = "/home/nao";

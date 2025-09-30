@@ -16,7 +16,7 @@ output "eDP-1" {
 }
 
 cursor {
-  size 15
+  xcursor-size 30
 }
 
 
