@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ./font.nix
     ./audio.nix
+    ./other.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
