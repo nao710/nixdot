@@ -6,6 +6,7 @@
     ./nvim
     ./fish
     ./niri
+    ./other.nix
   ];
   home.username = "nao";
   home.homeDirectory = "/home/nao";
