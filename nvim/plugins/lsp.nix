@@ -17,6 +17,7 @@
           clangd.enable = true;
           cssls.enable = true;
           ts_ls.enable = true;
+          qmlls.enable = true;
           lua_ls = {
             enable = true;
             settings.diagnostics.globals = [ "vim" ];

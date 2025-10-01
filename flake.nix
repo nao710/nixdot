@@ -11,8 +11,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
+       url = "git+https://git.outfoxxed.me/quickshell/quickshell";
+       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs =
@@ -27,11 +27,14 @@
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit self inputs; };
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
+          inputs.home-manager.nixosModules.default
           {
             home-manager = {
+              extraSpecialArgs = { inherit inputs; };
               sharedModules = [
                 nixvim.homeManagerModules.nixvim
               ];

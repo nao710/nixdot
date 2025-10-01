@@ -1,3 +1,3 @@
 {
- programs.quickshell.enable = true;
+ # programs.quickshell.enable = true;
 }
