@@ -1,5 +1,5 @@
 {
   import = [
     ./gpu.nix
-  ]
+  ];
 }
