@@ -5,11 +5,13 @@
     ./font.nix
     ./audio.nix
     ./other.nix
+    ./hardware
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+
 
   networking.hostName = "nixos";
 
@@ -72,5 +74,6 @@
   ];
 
   system.stateVersion = "25.05";
+
 
 }

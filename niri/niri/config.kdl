@@ -19,6 +19,7 @@ cursor {
   xcursor-size 30
 }
 
+prefer-no-csd
 
 layout {
     gaps 6
