@@ -12,7 +12,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
-
   networking.hostName = "nixos";
 
   networking.networkmanager.enable = true;
@@ -60,6 +59,7 @@
     wl-clipboard
     nerd-fonts.hack
     lsd
+    xwayland-satellite
   ];
 
   programs.firefox.enable = true;

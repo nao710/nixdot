@@ -5,9 +5,14 @@
     lact
   ];
 
-  hardware.graphics = {
-   enable = true;
-   enable32Bit = true;
+    hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      vulkan-loader
+      vulkan-tools
+      mesa
+      amdvlk  
+    ];
   };
 
   systemd.services.lact = {

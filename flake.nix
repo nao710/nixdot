@@ -22,6 +22,7 @@
       nixpkgs,
       home-manager,
       nixvim,
+      # niri,
       ...
     }@inputs:
     {
