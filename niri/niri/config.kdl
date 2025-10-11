@@ -148,6 +148,8 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swww-daemon"
+spawn-at-startup "swww -t wipe ../../quickshell/quickshell/Widgets/wall.png"
+spawn-at-startup "quickshell"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
