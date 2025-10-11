@@ -14,6 +14,10 @@
        url = "git+https://git.outfoxxed.me/quickshell/quickshell";
        inputs.nixpkgs.follows = "nixpkgs";
     };
+    swww = {
+      url = "github:LGFae/swww";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {

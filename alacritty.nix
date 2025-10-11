@@ -29,7 +29,7 @@
         };
       };
       window = {
-        # opacity = 0.763;
+        opacity = 0.763;
         dimensions = {
           columns = 200;
           lines = 40;

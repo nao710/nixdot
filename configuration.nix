@@ -59,7 +59,11 @@
     wl-clipboard
     nerd-fonts.hack
     lsd
+    bluez
     xwayland-satellite
+    material-design-icons
+    material-symbols
+    fuzzel
   ];
 
   programs.firefox.enable = true;

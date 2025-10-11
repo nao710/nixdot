@@ -7,7 +7,10 @@
         noto-fonts
         noto-fonts-cjk-sans
         noto-fonts-emoji
-         nerd-fonts.hack
+        nerd-fonts.hack
+        material-icons
+        material-design-icons
+        material-symbols
       ]
     );
     fontDir.enable = true;
