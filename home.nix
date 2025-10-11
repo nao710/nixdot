@@ -7,7 +7,8 @@
     ./nvim
     ./fish
     ./niri
-    # ./quickshell
+    ./fuzzel
+     ./quickshell
   ];
     home.packages = [
     inputs.quickshell.packages.${pkgs.system}.default
