@@ -64,6 +64,11 @@
     material-design-icons
     material-symbols
     fuzzel
+    kdePackages.dolphin
+    btop
+    cava
+    jq
+    nnn
   ];
 
   programs.firefox.enable = true;
