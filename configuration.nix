@@ -69,6 +69,7 @@
     cava
     jq
     nnn
+    unzip
   ];
 
   programs.firefox.enable = true;
