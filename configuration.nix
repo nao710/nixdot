@@ -70,6 +70,7 @@
     jq
     nnn
     unzip
+    discord
   ];
 
   programs.firefox.enable = true;
