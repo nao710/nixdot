@@ -1,18 +1,19 @@
 {inputs, config, pkgs, ... }:
 {
   imports = [
-     # inputs.quickshell.homeManagerModules.quickshell
     ./git.nix
     ./alacritty.nix
     ./nvim
     ./fish
     ./niri
     ./fuzzel
-     ./quickshell
+    ./quickshell
+    ./hyprland
   ];
     home.packages = [
     inputs.quickshell.packages.${pkgs.system}.default
     inputs.swww.packages.${pkgs.system}.swww
+    inputs.hyprland.packages.${pkgs.system}.hyprland
   ];
   home.username = "nao";
   home.homeDirectory = "/home/nao";

@@ -18,6 +18,10 @@
       url = "github:LGFae/swww";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland = {
+      url = "github:hyprwm/hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {

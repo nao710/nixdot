@@ -71,6 +71,9 @@
     nnn
     unzip
     discord
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
+    kitty
   ];
 
   programs.firefox.enable = true;
@@ -78,6 +81,9 @@
   services.displayManager.ly.enable = true;
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "nao" ];
 
   nix.settings.experimental-features = [
     "nix-command"
