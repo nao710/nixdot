@@ -13,7 +13,6 @@
     home.packages = [
     inputs.quickshell.packages.${pkgs.system}.default
     inputs.swww.packages.${pkgs.system}.swww
-    inputs.hyprland.packages.${pkgs.system}.hyprland
   ];
   home.username = "nao";
   home.homeDirectory = "/home/nao";

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -74,10 +74,13 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     kitty
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    hyprcursor
   ];
 
   programs.firefox.enable = true;
   programs.niri.enable = true;
+  programs.hyprland.enable = true;
   services.displayManager.ly.enable = true;
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
