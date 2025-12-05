@@ -12,6 +12,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
+  powerManagement.cpuFreqGovernor = "performance";
+
   networking.hostName = "nixos";
 
   networking.networkmanager.enable = true;
@@ -76,6 +78,7 @@
     kitty
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     hyprcursor
+    hypridle
   ];
 
   programs.firefox.enable = true;

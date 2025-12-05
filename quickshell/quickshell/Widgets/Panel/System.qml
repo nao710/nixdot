@@ -119,4 +119,19 @@ Item {
             }
         }
     }
+    IpcHandler {
+        target: "lockscreen"
+
+        function lockScreen(): void {
+            lock.locked = true;
+        }
+
+        function unlockScreen(): void {
+            lock.locked = false;
+        }
+
+        function isLocked(): bool {
+            return lock.locked;
+        }
+    }
 }

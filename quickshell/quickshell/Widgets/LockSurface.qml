@@ -7,26 +7,32 @@ import qs.components
 Rectangle {
     id: root
     required property var context
-    
+
     color: "#0d0d0d"
 
     Rectangle {
         anchors.fill: parent
         color: "transparent"
-        
+
         Image {
             anchors.fill: parent
             source: "./wall.png"  // 背景画像のパスを指定
             fillMode: Image.PreserveAspectCrop
             visible: source != ""
         }
-        
+
         Rectangle {
             anchors.fill: parent
             visible: parent.children[0].source == ""
             gradient: Gradient {
-                GradientStop { position: 0.0; color: "#1a1a2e" }
-                GradientStop { position: 1.0; color: "#0f0f1e" }
+                GradientStop {
+                    position: 0.0
+                    color: "#1a1a2e"
+                }
+                GradientStop {
+                    position: 1.0
+                    color: "#0f0f1e"
+                }
             }
         }
     }
@@ -48,18 +54,18 @@ Rectangle {
             Text {
                 id: clock
                 property var date: new Date()
-                
+
                 Layout.alignment: Qt.AlignHCenter
                 font.pixelSize: 96
                 font.weight: Font.ExtraLight
                 color: "#ffffff"
-                
+
                 text: {
                     const hours = this.date.getHours().toString().padStart(2, '0');
                     const minutes = this.date.getMinutes().toString().padStart(2, '0');
                     return `${hours}:${minutes}`;
                 }
-                
+
                 Timer {
                     running: true
                     repeat: true
@@ -71,22 +77,22 @@ Rectangle {
             Text {
                 id: dateText
                 property var date: new Date()
-                
+
                 Layout.alignment: Qt.AlignHCenter
                 font.pixelSize: 18
                 font.weight: Font.Normal
                 color: "#b0b0b0"
-                
+
                 text: {
-                    const options = { 
-                        year: 'numeric', 
-                        month: 'long', 
+                    const options = {
+                        year: 'numeric',
+                        month: 'long',
                         day: 'numeric',
                         weekday: 'long'
                     };
                     return this.date.toLocaleDateString('ja-JP', options);
                 }
-                
+
                 Connections {
                     target: clock
                     function onDateChanged() {
@@ -125,37 +131,37 @@ Rectangle {
                     TextField {
                         id: passwordBox
                         Layout.fillWidth: true
-                        
+
                         background: Rectangle {
                             color: "transparent"
                         }
-                        
+
                         color: "#ffffff"
                         font.pixelSize: 16
                         placeholderText: "Password"
                         placeholderTextColor: "#707070"
-                        
+
                         echoMode: TextInput.Password
                         inputMethodHints: Qt.ImhSensitiveData
                         enabled: !root.context.unlockInProgress
                         focus: true
-                        
+
                         onTextChanged: root.context.currentText = this.text
                         onAccepted: root.context.tryUnlock()
-                        
+
                         onActiveFocusChanged: {
                             if (!activeFocus) {
                                 forceActiveFocus();
                             }
                         }
-                        
+
                         Connections {
                             target: root.context
                             function onCurrentTextChanged() {
                                 passwordBox.text = root.context.currentText;
                             }
                         }
-                        
+
                         Component.onCompleted: {
                             forceActiveFocus();
                         }
@@ -166,7 +172,7 @@ Rectangle {
                         icon: "Refresh"
                         color: "#ffffff"
                         font.pixelSize: 20
-                        
+
                         RotationAnimation on rotation {
                             running: root.context.unlockInProgress
                             loops: Animation.Infinite
@@ -181,7 +187,7 @@ Rectangle {
                         width: 20
                         height: 20
                         color: "transparent"
-                        
+
                         MaterialIcon {
                             anchors.fill: parent
                             icon: "Arrow_Forward"
@@ -207,11 +213,5 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: 30
         spacing: 20
-
-        Text {
-            text: "Powered by Quickshell"
-            color: "#707070"
-            font.pixelSize: 12
-        }
     }
 }
