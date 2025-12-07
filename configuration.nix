@@ -79,6 +79,7 @@
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     hyprcursor
     hypridle
+    hyprpolkitagent
   ];
 
   programs.firefox.enable = true;
