@@ -7,6 +7,7 @@
 
   environment.variables = {
    ROC_ENABLE_PRE_VEGA = "1";
+   MOZ_ENABLE_WAYLAND= "1";
  };
 
 
@@ -17,7 +18,6 @@
       vulkan-loader
       vulkan-tools
       mesa
-      amdvlk  
     ];
   };
 

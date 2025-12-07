@@ -88,7 +88,9 @@
   services.displayManager.ly.enable = true;
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
-  virtualisation.waydroid.enable = true;
+  # virtualisation.waydroid.enable = true;
+
+  security.polkit.enable = true;
 
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "nao" ];
