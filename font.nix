@@ -6,7 +6,7 @@
       [
         noto-fonts
         noto-fonts-cjk-sans
-        noto-fonts-emoji
+        noto-fonts-color-emoji
         nerd-fonts.hack
         material-icons
         material-design-icons

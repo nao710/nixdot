@@ -46,6 +46,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "waydroid"
     ];
     packages = with pkgs; [ ];
   };
@@ -80,6 +81,7 @@
     hyprcursor
     hypridle
     hyprpolkitagent
+    genymotion
   ];
 
   programs.firefox.enable = true;

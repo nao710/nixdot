@@ -12,7 +12,7 @@
   ];
     home.packages = [
     inputs.quickshell.packages.${pkgs.system}.default
-    inputs.swww.packages.${pkgs.system}.swww
+    inputs.awww.packages.${pkgs.system}.awww
   ];
   home.username = "nao";
   home.homeDirectory = "/home/nao";
