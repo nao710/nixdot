@@ -90,7 +90,12 @@
   services.displayManager.ly.enable = true;
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
-  virtualisation.waydroid.enable = true;
+
+  virtualisation.waydroid = {
+    enable = true;
+    package = pkgs.waydroid-nftables;
+  };
+
 
   security.polkit.enable = true;
 
