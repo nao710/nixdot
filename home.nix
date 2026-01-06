@@ -7,7 +7,7 @@
     ./fish
     ./niri
     ./fuzzel
-    # ./quickshell
+    ./quickshell
     ./hyprland
   ];
     home.packages = [
