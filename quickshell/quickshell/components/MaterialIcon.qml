@@ -9,5 +9,5 @@ Text {
     font.hintingPreference: Font.PreferFullHinting
     renderType: Text.NativeRendering
     text: root.icon
-    color: "#E6E0E9"
+    color: "#cdd6f4"
 }

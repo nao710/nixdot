@@ -3,7 +3,7 @@ import Quickshell
 
 Text {
     id: root
-    color: "#E6E0E9"
+    color: "#cdd6f4"
     text: Qt.formatDateTime(clock.date, "AP hh:mm:ss")
     SystemClock {
         id: clock

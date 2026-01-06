@@ -82,6 +82,7 @@
     hypridle
     hyprpolkitagent
     genymotion
+    waydroid-helper
   ];
 
   programs.firefox.enable = true;

@@ -30,7 +30,7 @@ Item {
 
         Rectangle {
             anchors.fill: parent
-            color: "#141218"
+            color: "#181825"
             radius: 10
 
             ColumnLayout {
@@ -47,20 +47,20 @@ Item {
                         text: "Bluetooth devices"
                         font.pixelSize: 16
                         font.weight: Font.Bold
-                        color: "#FFFFFF"
+                        color: "#cdd6f4"
                     }
 
                     Rectangle {
                         width: 30
                         height: 30
                         radius: 15
-                        color: "#4A4458"
+                        color: "#45475a"
 
                         MaterialIcon {
                             anchors.centerIn: parent
                             icon: "Close"
                             font.pixelSize: 18
-                            color: "white"
+                            color: "#cdd6f4"
                         }
 
                         MouseArea {
@@ -74,7 +74,7 @@ Item {
                 Rectangle {
                     Layout.fillWidth: true
                     height: 1
-                    color: "#4A4458"
+                    color: "#45475a"
                 }
 
                 BluetoothManager {

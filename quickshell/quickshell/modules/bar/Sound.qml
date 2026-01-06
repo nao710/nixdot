@@ -62,7 +62,7 @@ Item {
             text: Math.round(root.volume) + "%"
             font.pixelSize: 12
             visible: !!root.audioSink
-            color: "#E6E0E9"
+            color: "#cdd6f4"
         }
     }
 }

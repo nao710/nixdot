@@ -23,7 +23,7 @@ Scope {
             Rectangle {
                 id: barBackground
                 anchors.fill: parent
-                color: "#141218"
+                color: "#181825"
                 Item {
                     anchors.left: parent.left
                     anchors.top: parent.top

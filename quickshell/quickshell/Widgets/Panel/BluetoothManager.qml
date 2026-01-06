@@ -36,7 +36,7 @@ Item {
         Rectangle {
             Layout.fillWidth: true
             Layout.preferredHeight: 60
-            color: isBluetoothEnabled ? "#6750A4" : "#4A4458"
+            color: isBluetoothEnabled ? "#7f849c" : "#6c7086"
             radius: 10
 
             RowLayout {
@@ -47,7 +47,7 @@ Item {
                 MaterialIcon {
                     icon: isBluetoothEnabled ? "Bluetooth" : "Bluetooth_Disabled"
                     font.pixelSize: 24
-                    color: "white"
+                    color: "#cdd6f4"
                 }
 
                 Text {
@@ -55,7 +55,7 @@ Item {
                     text: "Bluetooth"
                     font.pixelSize: 16
                     font.weight: Font.Medium
-                    color: "white"
+                    color: "#cdd6f4"
                 }
 
                 // トグルスイッチ
@@ -63,13 +63,13 @@ Item {
                     width: 50
                     height: 26
                     radius: 13
-                    color: isBluetoothEnabled ? "#381E72" : "#4A4458"
+                    color: isBluetoothEnabled ? "#89b4fa" : "#a6adc8"
 
                     Rectangle {
                         width: 22
                         height: 22
                         radius: 11
-                        color: "#E8DEF8"
+                        color: "#cdd6f4"
                         x: isBluetoothEnabled ? parent.width - width - 2 : 2
                         y: 2
 

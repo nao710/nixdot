@@ -44,7 +44,7 @@ Item {
 
         Text {
             text: root.displayText
-            color: "#E6E0E9"
+            color: "#cdd6f4"
         }
     }
 }

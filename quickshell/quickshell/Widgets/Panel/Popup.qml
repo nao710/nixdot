@@ -13,7 +13,7 @@ Item {
         visible: false
         implicitWidth: 500
         implicitHeight: 600
-        color: "#141218"
+        color: "#181825"
 
         anchors {
             top: toggleButton.y + toggleButton.implicitHeight + 5
@@ -42,7 +42,7 @@ Item {
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 100
-                color: "#49454F"
+                color: "#6c7086"
                 radius: 10
 
                 ColumnLayout {
@@ -95,11 +95,11 @@ Item {
     IpcHandler {
         target: "pWindow"
         function openWindow(): void {
-          if (pWindow.visible){
-            pWindow.visible = false;
-          }else{
-            pWindow.visible= true;
-          }
+            if (pWindow.visible) {
+                pWindow.visible = false;
+            } else {
+                pWindow.visible = true;
+            }
         }
     }
 }
