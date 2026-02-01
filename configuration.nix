@@ -8,6 +8,10 @@
     ./hardware
   ];
 
+  nixpkgs.config = {
+    allowUnfree = true;
+    };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
@@ -51,9 +55,9 @@
     packages = with pkgs; [ ];
   };
 
-  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    gcc
     vim
     wget
     thunderbird
@@ -81,8 +85,8 @@
     hyprcursor
     hypridle
     hyprpolkitagent
-    genymotion
     waydroid-helper
+    lutris
   ];
 
   programs.firefox.enable = true;
@@ -91,6 +95,8 @@
   services.displayManager.ly.enable = true;
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
+
+  services.flatpak.enable = true;
 
   virtualisation.waydroid = {
     enable = true;
@@ -107,6 +113,9 @@
     "nix-command"
     "flakes"
   ];
+
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "gtk";
 
   system.stateVersion = "25.05";
 
