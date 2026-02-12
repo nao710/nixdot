@@ -40,6 +40,11 @@
               warnings = [ "italic" ];
               ok = [ "italic" ];
             };
+                styles = {
+        comments = [ "italic" ]; 
+        functions = ["italic"];
+        booleans = ["italic"];
+    };
           };
         };
       };

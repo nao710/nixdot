@@ -13,6 +13,9 @@
     cmp-path = {
       enable = true;
     };
+    cmp-cmdline = {
+      enable = true;
+    };
 
     cmp_luasnip = {
       enable = true;
@@ -80,6 +83,17 @@
           "<Tab>" = "cmp.mapping.select_next_item({
 			behavior = cmp.SelectBehavior.Insert,
 		})";
+        };
+        cmdline = {
+          ":" = {
+            mapping = {
+              __raw = "cmp.mapping.preset.cmdline()";
+            };
+            sources = [
+              { name = "path"; }
+              { name = "cmdline"; }
+            ];
+          };
         };
       };
     };
