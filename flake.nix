@@ -1,7 +1,8 @@
 {
   description = "nixos config";
+
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11"; # github: を明記するのが無難
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,8 +12,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     quickshell = {
-       url = "git+https://git.outfoxxed.me/quickshell/quickshell";
-       inputs.nixpkgs.follows = "nixpkgs";
+      url = "git+https://git.outfoxxed.me/quickshell/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     awww = {
       url = "git+https://codeberg.org/LGFae/awww";
@@ -22,37 +23,37 @@
       url = "github:ndom91/rose-pine-hyprcursor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      nixvim,
-      quickshell,
-      ...
-    }@inputs:
-    {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit self inputs; };
-        modules = [
-          ./configuration.nix
-          home-manager.nixosModules.home-manager
-          inputs.home-manager.nixosModules.default
-          {
-            home-manager = {
-              extraSpecialArgs = { inherit inputs; };
-              sharedModules = [
-                nixvim.homeManagerModules.nixvim
-              ];
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.nao = import ./home.nix;
-              backupFileExtension = "backup";
-            };
-          }
-        ];
-      };
+        rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+  };
+
+  outputs = inputs@{ self, nixpkgs, home-manager,rust-overlay, ... }: {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; }; 
+      modules = [
+        {
+          nixpkgs.overlays = [ (import rust-overlay) ];
+        }
+        ./configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            extraSpecialArgs = { inherit inputs; };
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.nao = {
+              imports = [ 
+                inputs.nixvim.homeManagerModules.nixvim 
+                ./home.nix 
+              ];
+            };
+            backupFileExtension = "backup";
+          };
+        }
+      ];
+    };
+  };
 }

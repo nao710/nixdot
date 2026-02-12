@@ -87,6 +87,8 @@
     hyprpolkitagent
     waydroid-helper
     lutris
+    rust-bin.stable.latest.default
+    nixd
   ];
 
   programs.firefox.enable = true;

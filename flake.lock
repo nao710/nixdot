@@ -150,17 +150,18 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1767047869,
-        "narHash": "sha256-tzYsEzXEVa7op1LTnrLSiPGrcCY6948iD0EcNLWcmzo=",
-        "owner": "NixOS",
+        "lastModified": 1770770419,
+        "narHash": "sha256-iKZMkr6Cm9JzWlRYW/VPoL0A9jVKtZYiU4zSrVeetIs=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "89dbf01df72eb5ebe3b24a86334b12c27d68016a",
+        "rev": "6c5e707c6b5339359a9a9e215c5e66d6d802fd7a",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
+        "owner": "nixos",
         "ref": "nixos-25.11",
-        "type": "indirect"
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "nixvim": {
@@ -237,7 +238,8 @@
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "quickshell": "quickshell",
-        "rose-pine-hyprcursor": "rose-pine-hyprcursor"
+        "rose-pine-hyprcursor": "rose-pine-hyprcursor",
+        "rust-overlay": "rust-overlay_2"
       }
     },
     "rose-pine-hyprcursor": {
@@ -275,6 +277,26 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "rev": "ab3536fe850211a96673c6ffb2cb88aab8071cc9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1770865833,
+        "narHash": "sha256-oiARqnlvaW6pVGheVi4ye6voqCwhg5hCcGish2ZvQzI=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "c8cfbe26238638e2f3a2c0ae7e8d240f5e4ded85",
         "type": "github"
       },
       "original": {
