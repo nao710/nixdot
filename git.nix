@@ -1,15 +1,15 @@
 {
-programs.git = {
-  enable = true;
-  userName = "nao710";
-  userEmail = "naototanaoto@outlook.com";
-  extraConfig = {
-    core = {
-      editor = "neovim";
-    };
-    init = {
-      defaultBranch = "main";
+  programs.git = {
+    enable = true;
+    settings = {
+      user.email = "naototanaoto@outlook.com";
+      user.mame = "nao710";
+      core = {
+        editor = "neovim";
+      };
+      init = {
+        defaultBranch = "main";
+      };
     };
   };
-};
 }
