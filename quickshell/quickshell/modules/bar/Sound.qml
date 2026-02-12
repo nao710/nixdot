@@ -60,7 +60,7 @@ Item {
         Text {
             id: volumeText
             text: Math.round(root.volume) + "%"
-            font.pixelSize: 12
+            font.pixelSize: 14
             visible: !!root.audioSink
             color: "#cdd6f4"
         }

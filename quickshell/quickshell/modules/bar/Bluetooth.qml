@@ -45,6 +45,7 @@ Item {
         Text {
             text: root.displayText
             color: "#cdd6f4"
+            font.pixelSize: 14
         }
     }
 }

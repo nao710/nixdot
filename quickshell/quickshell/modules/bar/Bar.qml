@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Shapes
+import QtQuick.Effects
 import QtQuick.Controls
 import qs.Widgets.Panel
 
@@ -18,12 +19,19 @@ Scope {
                 left: true
                 right: true
             }
-            implicitHeight: 35
+            implicitHeight: 45
 
             Rectangle {
                 id: barBackground
                 anchors.fill: parent
+                anchors.leftMargin: 8
+                anchors.rightMargin: 8
+                anchors.topMargin: 5
                 color: "#181825"
+                radius: 6
+                border.color: "#181825"
+                border.width: 1
+
                 Item {
                     anchors.left: parent.left
                     anchors.top: parent.top
@@ -37,15 +45,10 @@ Scope {
                     }
                 }
 
-                // 中央のセクション
                 Item {
                     anchors.centerIn: parent
                     width: childrenRect.width
                     height: parent.height
-
-                    // Popup {
-                    //     anchors.verticalCenter: parent.verticalCenter
-                    // }
                 }
 
                 Item {

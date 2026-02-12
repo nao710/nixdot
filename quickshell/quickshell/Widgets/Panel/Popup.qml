@@ -12,61 +12,67 @@ Item {
         id: pWindow
         visible: false
         implicitWidth: 500
-        implicitHeight: 600
-        color: "#181825"
+        implicitHeight: 325
+        color: "transparent"
 
         anchors {
-            top: toggleButton.y + toggleButton.implicitHeight + 5
-            right: toggleButton.x + (toggleButton.implicitWidth - implicitWidth) / 2
+            top: toggleButton.y + toggleButton.implicitHeight + 6
+            right: toggleButton.x + (toggleButton.implicitWidth - implicitWidth) / 3
         }
 
-        ColumnLayout {
+        Rectangle {
             anchors.fill: parent
-            anchors.margins: 15
-            spacing: 15
+            color: "#181825"
+            radius: 6
+            anchors.topMargin: 10
+            anchors.rightMargin: 8
 
-            // クイックトグル
-            GridLayout {
-                Layout.fillWidth: true
-                columns: 2
-                rowSpacing: 10
-                columnSpacing: 10
+            ColumnLayout {
+                anchors.fill: parent
+                anchors.margins: 15
+                spacing: 15
 
-                // Bluetoothトグル
-                BluetoothPanel {
-                    id: bluetoothPanel
+                // クイックトグル
+                GridLayout {
+                    Layout.fillWidth: true
+                    columns: 2
+                    rowSpacing: 10
+                    columnSpacing: 10
+
+                    // Bluetoothトグル
+                    BluetoothPanel {
+                        id: bluetoothPanel
+                    }
                 }
-            }
 
-            // Media
-            Rectangle {
-                Layout.fillWidth: true
-                Layout.preferredHeight: 100
-                color: "#6c7086"
-                radius: 10
+                // Media
+                Rectangle {
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 100
+                    color: "#6c7086"
+                    radius: 10
 
-                ColumnLayout {
-                    anchors.fill: parent
-                    anchors.margins: 15
-                    spacing: 10
-                    Media {}
+                    ColumnLayout {
+                        anchors.fill: parent
+                        anchors.margins: 15
+                        spacing: 10
+                        Media {}
+                    }
                 }
-            }
 
-            // System (電源メニュー)
-            System {
-                Layout.fillWidth: true
-            }
+                System {
+                    Layout.fillWidth: true
+                }
 
-            Item {
-                Layout.fillHeight: true
+                Item {
+                    Layout.fillHeight: true
+                }
             }
         }
     }
 
     Rectangle {
         id: toggleButton
-
         anchors.centerIn: parent
         width: buttonLayout.implicitWidth + 10
         height: buttonLayout.implicitHeight + 10
@@ -92,6 +98,7 @@ Item {
             }
         }
     }
+
     IpcHandler {
         target: "pWindow"
         function openWindow(): void {

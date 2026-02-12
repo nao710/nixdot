@@ -89,6 +89,7 @@
     lutris
     rust-bin.stable.latest.default
     nixd
+    genymotion
   ];
 
   programs.firefox.enable = true;
