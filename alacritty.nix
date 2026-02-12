@@ -4,6 +4,11 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      colors = {
+        primary = {
+          background = "#181825"; # Example: Gruvbox dark hard contrast background
+        };
+      };
       font = {
         size = 12;
         bold = {
@@ -29,7 +34,8 @@
         };
       };
       window = {
-        opacity = 0.763;
+        opacity = 0.721;
+        blur = true;
         dimensions = {
           columns = 200;
           lines = 40;
