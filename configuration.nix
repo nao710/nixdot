@@ -90,6 +90,7 @@
     rust-bin.stable.latest.default
     nixd
     genymotion
+    nixfmt
   ];
 
   programs.firefox.enable = true;

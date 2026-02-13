@@ -2,6 +2,17 @@
   diagnostic.settings.virtual_text = true;
 
   plugins = {
+    tiny-inline-diagnostic = {
+      enable = true;
+      settings = {
+        multilines = {
+          enabled = true;
+        };
+        options = {
+          use_icons_from_diagnostic = true;
+        };
+      };
+    };
     rustaceanvim = {
       enable = true;
       settings.tools.enable_clippy = true;
@@ -21,7 +32,11 @@
         #   installCargo = true;
         #   installRustc = true;
         # };
-        nixd.enable = true;
+        nixd = {
+          enable = true;
+          settings.formatting.command = [ "nixfmt" ];
+
+        };
         clangd.enable = true;
         cssls.enable = true;
         ts_ls.enable = true;

@@ -22,7 +22,7 @@ Item {
         id: bluetoothPanel
         visible: false
         implicitWidth: 500
-        implicitHeight: 600
+        implicitHeight: 325
         color: "transparent"
 
         anchors.top: parent.top
