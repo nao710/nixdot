@@ -2,6 +2,7 @@
 {
   programs.fish = {
     shellAliases = {
+      ls = "lsd";
       ".." = "cd ..";
       "..." = "cd ../..";
       ll = "lsd -la";
@@ -16,44 +17,11 @@
       gcl = "gh repo clone";
       gc = "git commit";
     };
+    interactiveShellInit = ''
+      function auto_ls --on-variable PWD
+          status --is-interactive; and ls
+      end
 
-    functions.cd = {
-      body = ''
-        if test (count $argv) -eq 0
-            builtin cd ~
-            set -l cd_status $status
-        else if test (count $argv) -gt 1
-            printf "%s\n" (_ "Too many args for cd command")
-            return 1
-        else
-            if test "$argv" = "-"
-                if test "$__fish_cd_direction" = "next"
-                    nextd
-                else
-                    prevd
-                end
-                return $status
-            end
-            set -l previous $PWD
-            builtin cd $argv
-            set -l cd_status $status
-        end
-
-        if test $cd_status -eq 0 -a "$PWD" != "$previous"
-            set -q dirprev[$MAX_DIR_HIST]
-            and set -e dirprev[1]
-            set -g dirprev $dirprev $previous
-            set -e dirnext
-            set -g __fish_cd_direction prev
-        end
-
-        if test $cd_status -ne 0
-            return 1
-        end
-
-        ls
-        return $status
-      '';
-    };
+    '';
   };
 }
