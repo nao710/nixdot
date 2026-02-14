@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -6,12 +11,11 @@
   ];
 
   environment.variables = {
-   ROC_ENABLE_PRE_VEGA = "1";
-   MOZ_ENABLE_WAYLAND= "1";
- };
+    ROC_ENABLE_PRE_VEGA = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+  };
 
-
-    hardware.graphics = {
+  hardware.graphics = {
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
@@ -23,8 +27,8 @@
 
   systemd.services.lact = {
     description = "AMDGPU Control Daemon";
-    after = ["multi-user.target"];
-    wantedBy = ["multi-user.target"];
+    after = [ "multi-user.target" ];
+    wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       ExecStart = "${pkgs.lact}/bin/lact daemon";
     };

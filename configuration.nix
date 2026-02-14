@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -6,11 +11,12 @@
     ./audio.nix
     ./other.nix
     ./hardware
+    ./fish
   ];
 
   nixpkgs.config = {
     allowUnfree = true;
-    };
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -55,7 +61,6 @@
     packages = with pkgs; [ ];
   };
 
-
   environment.systemPackages = with pkgs; [
     gcc
     vim
@@ -81,16 +86,17 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     kitty
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     hyprcursor
     hypridle
     hyprpolkitagent
     waydroid-helper
     lutris
-    rust-bin.stable.latest.default
     nixd
     genymotion
     nixfmt
+    lsd
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    rust-bin.stable.latest.default
   ];
 
   programs.firefox.enable = true;
@@ -107,7 +113,6 @@
     package = pkgs.waydroid-nftables;
   };
 
-
   security.polkit.enable = true;
 
   virtualisation.virtualbox.host.enable = true;
@@ -122,6 +127,5 @@
   xdg.portal.config.common.default = "gtk";
 
   system.stateVersion = "25.05";
-
 
 }

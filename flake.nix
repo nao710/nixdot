@@ -23,37 +23,44 @@
       url = "github:ndom91/rose-pine-hyprcursor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-        rust-overlay = {
+    rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager,rust-overlay, ... }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; }; 
-      modules = [
-        {
-          nixpkgs.overlays = [ (import rust-overlay) ];
-        }
-        ./configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            extraSpecialArgs = { inherit inputs; };
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.nao = {
-              imports = [ 
-                inputs.nixvim.homeManagerModules.nixvim 
-                ./home.nix 
-              ];
+  outputs =
+    inputs@{
+      nixpkgs,
+      home-manager,
+      rust-overlay,
+      ...
+    }:
+    {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          {
+            nixpkgs.overlays = [ (import rust-overlay) ];
+          }
+          ./configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              extraSpecialArgs = { inherit inputs; };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.nao = {
+                imports = [
+                  inputs.nixvim.homeModules.nixvim
+                  ./home.nix
+                ];
+              };
+              backupFileExtension = "backup";
             };
-            backupFileExtension = "backup";
-          };
-        }
-      ];
+          }
+        ];
+      };
     };
-  };
 }
