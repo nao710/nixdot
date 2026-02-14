@@ -1,8 +1,12 @@
-{ config, lib, pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   fonts = {
-   packages = (with pkgs;
+    packages = (
+      with pkgs;
       [
         noto-fonts
         noto-fonts-cjk-sans
@@ -20,11 +24,11 @@
           "Noto Serif CJK JP"
           "Noto Color Emoji"
         ];
-        sansSerif =[
+        sansSerif = [
           "Noto Sans CJK JP"
           "Noto Clor Emoji"
         ];
-        emoji = ["Noto Color Emoji"];
+        emoji = [ "Noto Color Emoji" ];
       };
     };
   };

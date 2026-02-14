@@ -1,16 +1,15 @@
-{inputs, pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     ./git.nix
     ./alacritty.nix
     ./nvim
-    ./fish
     ./niri
     ./fuzzel
     ./quickshell
     ./hyprland
   ];
-    home.packages = [
+  home.packages = [
     inputs.quickshell.packages.${pkgs.system}.default
     inputs.awww.packages.${pkgs.system}.awww
     (pkgs.rust-bin.stable.latest.default.override {
