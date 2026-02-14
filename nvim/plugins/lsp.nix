@@ -35,7 +35,6 @@
         nixd = {
           enable = true;
           settings.formatting.command = [ "nixfmt" ];
-
         };
         clangd.enable = true;
         cssls.enable = true;
