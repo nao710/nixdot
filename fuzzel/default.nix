@@ -1,6 +1,6 @@
 {
-    home.file.".config/fuzzel" = {
-      recursive = true;
-      source = ./fuzzel;
-    };
+  home.file.".config/fuzzel" = {
+    recursive = true;
+    source = ./fuzzel;
+  };
 }

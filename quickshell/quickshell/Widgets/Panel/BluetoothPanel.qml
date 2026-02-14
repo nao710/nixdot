@@ -1,4 +1,5 @@
 import QtQuick
+
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Bluetooth
@@ -31,7 +32,9 @@ Item {
         Rectangle {
             anchors.fill: parent
             color: "#181825"
-            radius: 10
+            radius: 6
+            anchors.topMargin: 10
+            anchors.rightMargin: 8
 
             ColumnLayout {
                 anchors.fill: parent
