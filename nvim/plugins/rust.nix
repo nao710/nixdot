@@ -2,8 +2,10 @@
   plugins = {
     creates = {
       enable = true;
-      autoload = true;
-      autoupdate = true;
+      settings = {
+        autoload = true;
+        autoupdate = true;
+      };
     };
   };
 }
