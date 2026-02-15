@@ -95,6 +95,7 @@
     genymotion
     nixfmt
     lsd
+    nodejs_24
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     rust-bin.stable.latest.default
   ];

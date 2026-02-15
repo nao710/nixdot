@@ -8,6 +8,7 @@
       ./luasnip.nix
       ./lualine.nix
       ./theme.nix
+      ./rust.nix
     ];
     plugins = {
       autoclose.enable = true;
