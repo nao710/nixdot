@@ -71,6 +71,7 @@
           "<C-Space>" = "cmp.mapping.complete()";
           "<S-Tab>" = "cmp.mapping.close()";
           "<Tab>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert })";
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
         };
       };
 

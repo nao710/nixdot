@@ -1,6 +1,6 @@
 {
   plugins = {
-    creates = {
+    crates = {
       enable = true;
       settings = {
         autoload = true;
