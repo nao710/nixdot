@@ -206,6 +206,11 @@
         key = "ff";
         action = "<cmd>Oil --float<CR>";
       }
+      {
+        mode = "n";
+        key = "rs";
+        action = ":RustLsp ";
+      }
 
     ];
   };

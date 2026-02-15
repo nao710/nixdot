@@ -2,6 +2,7 @@
 {
   programs.fish = {
     shellAliases = {
+      cdd = "cd ~";
       ls = "lsd";
       ".." = "cd ..";
       "..." = "cd ../..";
@@ -21,7 +22,6 @@
       function auto_ls --on-variable PWD
           status --is-interactive; and ls
       end
-
     '';
   };
 }
