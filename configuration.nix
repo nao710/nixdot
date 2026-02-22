@@ -58,7 +58,6 @@
       "wheel"
       "waydroid"
     ];
-    packages = with pkgs; [ ];
   };
 
   environment.systemPackages = with pkgs; [
@@ -96,6 +95,8 @@
     nixfmt
     lsd
     nodejs_24
+    zsh
+    zsh-powerlevel10k
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     rust-bin.stable.latest.default
   ];
@@ -104,8 +105,8 @@
   programs.niri.enable = true;
   programs.hyprland.enable = true;
   services.displayManager.ly.enable = true;
-  programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
+  # programs.fish.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
   services.flatpak.enable = true;
   services.power-profiles-daemon.enable = true;
