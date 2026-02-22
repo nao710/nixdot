@@ -20,8 +20,7 @@
     lspsaga = {
       enable = true;
       settings = {
-
-        codeaction.enable = false;
+        code_action.enable = false;
       };
     };
     none-ls.enable = true;
