@@ -29,7 +29,7 @@ Scope {
                 anchors.topMargin: 5
                 color: "#181825"
                 radius: 6
-                border.color: "#181825"
+                border.color: "#01181825"
                 border.width: 1
 
                 Item {

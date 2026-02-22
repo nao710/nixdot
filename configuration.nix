@@ -108,6 +108,7 @@
   users.defaultUserShell = pkgs.fish;
 
   services.flatpak.enable = true;
+  services.power-profiles-daemon.enable = true;
 
   virtualisation.waydroid = {
     enable = true;

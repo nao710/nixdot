@@ -34,7 +34,7 @@
         };
       };
       window = {
-        opacity = 0.721;
+        opacity = 0.5;
         blur = true;
         dimensions = {
           columns = 200;
