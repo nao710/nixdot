@@ -12,6 +12,7 @@
     ./other.nix
     ./hardware
     ./fish
+    ./zsh
   ];
 
   nixpkgs.config = {

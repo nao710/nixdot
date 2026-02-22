@@ -8,7 +8,6 @@
     ./fuzzel
     ./quickshell
     ./hyprland
-    ./zsh
   ];
   home.packages = [
     inputs.quickshell.packages.${pkgs.system}.default
