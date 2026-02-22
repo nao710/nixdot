@@ -17,7 +17,13 @@
       enable = true;
       settings.tools.enable_clippy = true;
     };
-    lspsaga.enable = true;
+    lspsaga = {
+      enable = true;
+      settings = {
+
+        codeaction.enable = false;
+      };
+    };
     none-ls.enable = true;
     lsp-format = {
       enable = true;

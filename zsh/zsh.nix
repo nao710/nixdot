@@ -6,7 +6,7 @@
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     histSize = 10000;
-    promptInit = ''source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme'';
+    promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
     shellAliases = {
       cdd = "cd ~";
       ls = "lsd";
@@ -24,7 +24,7 @@
       gcl = "gh repo clone";
       gc = "git commit";
     };
-    oh-my-zsh = {
+    ohMyZsh = {
       enable = true;
       plugins = [
         "git"
