@@ -20,7 +20,7 @@
     lspsaga = {
       enable = true;
       settings = {
-        code_action.enable = false;
+        lightbulb.enable = false;
       };
     };
     none-ls.enable = true;
