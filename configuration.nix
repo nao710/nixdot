@@ -130,6 +130,10 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   xdg.portal.config.common.default = "gtk";
 
+  systemd.tmpfiles.rules = [
+    "d /mnt/sda 0755 nao users -"
+  ];
+
   system.stateVersion = "25.05";
 
 }
