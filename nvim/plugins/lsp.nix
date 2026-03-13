@@ -1,6 +1,5 @@
 {
   diagnostic.settings.virtual_text = true;
-
   plugins = {
     tiny-inline-diagnostic = {
       enable = true;
