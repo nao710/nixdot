@@ -36,7 +36,7 @@ Item {
                 elide: Text.ElideRight
                 font.pixelSize: 13
                 font.weight: Font.Medium
-                color: "#cdd6f4"
+                color: "#D3C6AA"
                 horizontalAlignment: Text.AlignHCenter
             }
         }
@@ -51,7 +51,7 @@ Item {
                 implicitWidth: 30
                 implicitHeight: 30
                 background: Rectangle {
-                    color: parent.hovered ? "#89b4fa" : "transparent"
+                    color: parent.hovered ? "#56635F" : "transparent"
                     radius: 8
                 }
                 MaterialIcon {
@@ -68,7 +68,7 @@ Item {
                 implicitWidth: 30
                 implicitHeight: 30
                 background: Rectangle {
-                    color: parent.hovered ? "#89b4fa" : "transparent"
+                    color: parent.hovered ? "#56635F" : "transparent"
                     radius: 8
                 }
                 MaterialIcon {
@@ -91,7 +91,7 @@ Item {
                 implicitWidth: 30
                 implicitHeight: 30
                 background: Rectangle {
-                    color: parent.hovered ? "#89b4fa" : "transparent"
+                    color: parent.hovered ? "#56635F" : "transparent"
                     radius: 8
                 }
                 MaterialIcon {

@@ -27,9 +27,9 @@ Scope {
                 anchors.leftMargin: 8
                 anchors.rightMargin: 8
                 anchors.topMargin: 5
-                color: "#181825"
+                color: "#2D353B"
                 radius: 6
-                border.color: "#01181825"
+                border.color: "#2D353B"
                 border.width: 1
 
                 Item {

@@ -31,7 +31,7 @@ Item {
 
         Rectangle {
             anchors.fill: parent
-            color: "#181825"
+            color: "#2D353B"
             radius: 6
             anchors.topMargin: 10
             anchors.rightMargin: 8
@@ -50,20 +50,20 @@ Item {
                         text: "Bluetooth devices"
                         font.pixelSize: 16
                         font.weight: Font.Bold
-                        color: "#cdd6f4"
+                        color: "#D3C6AA"
                     }
 
                     Rectangle {
                         width: 30
                         height: 30
                         radius: 15
-                        color: "#45475a"
+                        color: "transparent"
 
                         MaterialIcon {
                             anchors.centerIn: parent
                             icon: "Close"
                             font.pixelSize: 18
-                            color: "#cdd6f4"
+                            color: "#D3C6AA"
                         }
 
                         MouseArea {
@@ -77,7 +77,7 @@ Item {
                 Rectangle {
                     Layout.fillWidth: true
                     height: 1
-                    color: "#45475a"
+                    color: "#7FBBB3"
                 }
 
                 BluetoothManager {
@@ -90,7 +90,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: root.isBluetoothEnabled ? "#6750A4" : "#49454F"
+        color: root.isBluetoothEnabled ? "#3A515D" : "#475258"
         radius: 10
 
         ColumnLayout {
@@ -101,14 +101,14 @@ Item {
                 Layout.alignment: Qt.AlignHCenter
                 icon: root.isBluetoothEnabled ? "Bluetooth" : "Bluetooth_Disabled"
                 font.pixelSize: 24
-                color: root.isBluetoothEnabled ? "#EADDFF" : "#B7BBD0"
+                color: root.isBluetoothEnabled ? "#D3C6AA" : "#D3C6AA"
             }
 
             Text {
                 Layout.alignment: Qt.AlignHCenter
                 text: "Bluetooth"
                 font.pixelSize: 11
-                color: root.isBluetoothEnabled ? "white" : "#B7BBD0"
+                color: root.isBluetoothEnabled ? "#D3C6AA" : "#D3C6AA"
             }
         }
 

@@ -15,7 +15,7 @@ Item {
     Rectangle {
         id: powerMenu
         anchors.fill: parent
-        color: "#45475a"
+        color: "#475258"
         radius: 10
 
         RowLayout {
@@ -28,7 +28,7 @@ Item {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 background: Rectangle {
-                    color: parent.hovered ? "#89b4fa" : "transparent"
+                    color: parent.hovered ? "#56635F" : "transparent"
                     radius: 8
                 }
 
@@ -48,7 +48,7 @@ Item {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 background: Rectangle {
-                    color: parent.hovered ? "#89b4fa" : "transparent"
+                    color: parent.hovered ? "#56635F" : "transparent"
                     radius: 8
                 }
 
@@ -68,7 +68,7 @@ Item {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 background: Rectangle {
-                    color: parent.hovered ? "#89b4fa" : "transparent"
+                    color: parent.hovered ? "#56635F" : "transparent"
                     radius: 8
                 }
 

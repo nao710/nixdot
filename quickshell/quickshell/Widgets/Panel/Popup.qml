@@ -22,7 +22,7 @@ Item {
 
         Rectangle {
             anchors.fill: parent
-            color: "#181825"
+            color: "#2D353B"
             radius: 6
             anchors.topMargin: 10
             anchors.rightMargin: 8
@@ -49,7 +49,7 @@ Item {
                 Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 100
-                    color: "#6c7086"
+                    color: "#475258"
                     radius: 10
 
                     ColumnLayout {
