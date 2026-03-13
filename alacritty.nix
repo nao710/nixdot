@@ -3,12 +3,13 @@
 
   programs.alacritty = {
     enable = true;
+    theme = "everforest_dark";
     settings = {
-      colors = {
-        primary = {
-          background = "#181825"; # Example: Gruvbox dark hard contrast background
-        };
-      };
+      # colors = {
+      #   primary = {
+      #     background = "#181825"; # Example: Gruvbox dark hard contrast background
+      #   };
+      # };
       font = {
         size = 12;
         bold = {
