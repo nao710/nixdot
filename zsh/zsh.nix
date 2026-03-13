@@ -24,6 +24,7 @@
       gcl = "gh repo clone";
       gc = "git commit";
       gd = "git diff";
+      nvddiff = "sudo nixos-rebuild build --flake . && nvd diff  /run/current-system result/";
       nixbuild = "sudo nixos-rebuild switch --flake . #nixos";
     };
     ohMyZsh = {
