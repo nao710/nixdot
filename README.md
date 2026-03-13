@@ -8,4 +8,11 @@ w
 sudo mkfs.ext4 -L drive_name /dev/sda1
 sudo mount /dev/sda1
 sudo nixos-generate-config
+
+# How to Update
+
+nix flake update
+
+sudo nixos-rebuild switch --flake .
+
 '''
