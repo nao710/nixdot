@@ -8,6 +8,7 @@
     ./fuzzel
     ./quickshell
     ./hyprland
+    inputs.zen-browser.homeModules.twilight
   ];
   home.packages = [
     inputs.quickshell.packages.${pkgs.system}.default
@@ -20,4 +21,21 @@
   home.username = "nao";
   home.homeDirectory = "/home/nao";
   home.stateVersion = "25.05";
+
+  programs.zen-browser.enable = true;
+  programs.zen-browser.policies = {
+    AutofillCreditCardEnabled = false;
+    DisableAppUpdate = true;
+    DisableFeedbackCommands = true;
+    DisablePocket = true;
+    DontCheckDefaultBrowser = true;
+    NoDefaultBookmarks = true;
+    OfferToSaveLogins = false;
+    EnableTrackingProtection = {
+      Value = true;
+      Locked = true;
+      Cryptomining = true;
+      Fingerprinting = true;
+    };
+  };
 }

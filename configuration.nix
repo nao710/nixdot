@@ -21,7 +21,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   powerManagement.cpuFreqGovernor = "performance";
 
@@ -92,12 +92,12 @@
     waydroid-helper
     lutris
     nixd
-    genymotion
     nixfmt
     lsd
     nodejs_24
     zsh
     zsh-powerlevel10k
+    nvd
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     rust-bin.stable.latest.default
   ];
@@ -118,9 +118,6 @@
   };
 
   security.polkit.enable = true;
-
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "nao" ];
 
   nix.settings.experimental-features = [
     "nix-command"
