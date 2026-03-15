@@ -102,8 +102,8 @@
     rust-bin.stable.latest.default
   ];
 
-  programs.firefox.enable = true;
-  programs.niri.enable = true;
+  # programs.firefox.enable = true;
+  # programs.niri.enable = true;
   programs.hyprland.enable = true;
   services.displayManager.ly.enable = true;
   # programs.fish.enable = true;
