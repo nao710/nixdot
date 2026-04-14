@@ -211,6 +211,11 @@
         key = "rs";
         action = ":RustLsp ";
       }
+      {
+        mode = "n";
+        key = "ro";
+        action = ":RustLsp openDocs<CR>";
+      }
 
     ];
   };

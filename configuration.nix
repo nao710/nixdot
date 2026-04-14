@@ -98,6 +98,8 @@
     zsh
     zsh-powerlevel10k
     nvd
+    wine
+    winetricks
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     rust-bin.stable.latest.default
   ];
