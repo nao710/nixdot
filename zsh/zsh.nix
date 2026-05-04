@@ -26,6 +26,7 @@
       gd = "git diff";
       nvddiff = "sudo nixos-rebuild build --flake . && nvd diff  /run/current-system result/";
       nixbuild = "sudo nixos-rebuild switch --flake . #nixos";
+      wmres = "hyprctl --instance 0 'keyword misc:allow_session_lock_restore 1' &&  hyprctl --instance 0 'dispatch exec quickshell ipc call lockscreen lockScreen'";
     };
     ohMyZsh = {
       enable = true;

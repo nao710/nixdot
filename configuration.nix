@@ -87,10 +87,10 @@
     xdg-desktop-portal-hyprland
     kitty
     hyprcursor
-    hypridle
     hyprpolkitagent
     waydroid-helper
-    lutris
+    # lutris
+    protonplus
     nixd
     nixfmt
     lsd
