@@ -89,7 +89,6 @@
     hyprcursor
     hyprpolkitagent
     waydroid-helper
-    # lutris
     protonplus
     nixd
     nixfmt
@@ -103,6 +102,7 @@
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     rust-bin.stable.latest.default
   ];
+
 
   # programs.firefox.enable = true;
   # programs.niri.enable = true;
